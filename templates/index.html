@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike & Car Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        .container { width: 60%; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .product { border-bottom: 1px solid #ddd; padding: 10px; }
+        .product:last-child { border-bottom: none; }
+        button { padding: 10px 15px; background: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background: darkblue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AutoStore 🚗🏍️</h1>
+        <p>Explore our premium range of cars and bikes!</p>
+
+        <div class="product">
+            <h3>BMW S1000RR</h3>
+            <p>Price: $20,000</p>
+            <button onclick="logSearch('BMW S1000RR')">View Details</button>
+        </div>
+
+        <div class="product">
+            <h3>Mercedes-Benz AMG GT</h3>
+            <p>Price: $120,000</p>
+            <button onclick="logSearch('Mercedes-Benz AMG GT')">View Details</button>
+        </div>
+
+        <div class="product">
+            <h3>Ducati Panigale V4</h3>
+            <p>Price: $28,000</p>
+            <button onclick="logSearch('Ducati Panigale V4')">View Details</button>
+        </div>
+    </div>
+
+    <script>
+        function logSearch(product) {
+            fetch(`/search?query=${encodeURIComponent(product)}`);
+            alert(`Searching for: ${product}`);
+        }
+    </script>
+</body>
+</html>
